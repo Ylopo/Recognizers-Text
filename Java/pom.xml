@@ -70,7 +70,7 @@
                 <repository>
                 <id>github</id>
                 <name>GitHub Packages</name>
-                <url>https://maven.pkg.github.com/zhaochunqi/recognizers-text</url>
+                <url>https://maven.pkg.github.com/ylopo/recognizers-text</url>
                 </repository>
             </distributionManagement>
         </profile>
