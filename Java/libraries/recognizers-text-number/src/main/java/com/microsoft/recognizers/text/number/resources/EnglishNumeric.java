@@ -206,7 +206,7 @@ public class EnglishNumeric {
 
     public static final String EqualRegex = "(equal(s|ing)?(\\s+(to|than))?|(?<!<|>)=)";
 
-    public static final String MoreOrEqualPrefix = "((no\\s+{LessRegex})|(at\\s+least))"
+    public static final String MoreOrEqualPrefix = "((no\\s+{LessRegex})|(at\\s+least)|(min(imum)?(\\s+of)?))"
             .replace("{LessRegex}", LessRegex);
 
     public static final String MoreOrEqual = "(?:({MoreRegex}\\s+(or)?\\s+{EqualRegex})|({EqualRegex}\\s+(or)?\\s+{MoreRegex})|{MoreOrEqualPrefix}(\\s+(or)?\\s+{EqualRegex})?|({EqualRegex}\\s+(or)?\\s+)?{MoreOrEqualPrefix}|>\\s*=|≥)"
@@ -215,9 +215,9 @@ public class EnglishNumeric {
             .replace("{LessRegex}", LessRegex)
             .replace("{MoreOrEqualPrefix}", MoreOrEqualPrefix);
 
-    public static final String MoreOrEqualSuffix = "((and|or)\\s+(((more|greater|higher|larger|bigger)((?!\\s+than)|(\\s+than(?!((\\s+or\\s+equal\\s+to)?\\s*\\d+)))))|((over|above)(?!\\s+than))))";
+    public static final String MoreOrEqualSuffix = "(((and|or)\\s+(((more|greater|higher|larger|bigger)((?!\\s+than)|(\\s+than(?!((\\s+or\\s+equal\\s+to)?\\s*\\d+)))))|((over|above)(?!\\s+than))))|(min(imum)?))";
 
-    public static final String LessOrEqualPrefix = "((no\\s+{MoreRegex})|(at\\s+most)|(up\\s+to))"
+    public static final String LessOrEqualPrefix = "((no\\s+{MoreRegex})|(at\\s+most)|(up\\s+to)|(max(imum)?(\\s+of)?))"
             .replace("{MoreRegex}", MoreRegex);
 
     public static final String LessOrEqual = "(({LessRegex}\\s+(or)?\\s+{EqualRegex})|({EqualRegex}\\s+(or)?\\s+{LessRegex})|{LessOrEqualPrefix}(\\s+(or)?\\s+{EqualRegex})?|({EqualRegex}\\s+(or)?\\s+)?{LessOrEqualPrefix}|<\\s*=|≤)"
@@ -226,7 +226,7 @@ public class EnglishNumeric {
             .replace("{MoreRegex}", MoreRegex)
             .replace("{LessOrEqualPrefix}", LessOrEqualPrefix);
 
-    public static final String LessOrEqualSuffix = "((and|or)\\s+(less|lower|smaller|fewer)((?!\\s+than)|(\\s+than(?!(\\s*\\d+)))))";
+    public static final String LessOrEqualSuffix = "(((and|or)\\s+(less|lower|smaller|fewer)((?!\\s+than)|(\\s+than(?!(\\s*\\d+)))))|(max(imum)?))";
 
     public static final String NumberSplitMark = "(?![,.](?!\\d+))(?!\\s*\\b(and\\s+({LessRegex}|{MoreRegex})|but|or|to)\\b)"
             .replace("{MoreRegex}", MoreRegex)
